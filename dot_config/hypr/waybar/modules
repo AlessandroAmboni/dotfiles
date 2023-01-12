@@ -1,5 +1,5 @@
 {
-  "backlight": {
+ "backlight": {
     "interval": 2,
     "align": 0,
     "rotate": 0,
@@ -14,7 +14,7 @@
       "smooth-scrolling-threshold": 1,
     },
 
-	"wlr/workspaces-cn": {
+ "wlr/workspaces-cn": {
     "format": "{icon}",
     "on-click": "activate",
     "all-outputs": false,
