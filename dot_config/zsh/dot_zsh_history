@@ -1,0 +1,13 @@
+: 1673574998:0;echo $HISTFILE
+: 1673575005:0;z zsh
+: 1673575006:0;ls -a
+: 1673575012:0;vi .zsh_history
+: 1673575084:0;vi .zshrc
+: 1673575098:0;z z
+: 1673575101:0;vi .zshenv
+: 1673575114:0;vi .zshrc
+: 1673575203:0;z z
+: 1673575207:0;vi .zshrc
+: 1673575269:0;ls -a
+: 1673575274:0;chezmoi add .zshenv
+: 1673575280:0;chezmoi add .zsh_history
