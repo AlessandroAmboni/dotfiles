@@ -108,6 +108,10 @@ source $ZSH/oh-my-zsh.sh
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 alias cz='chezmoi'
+alias cza='chezmoi apply'
+alias czc='chezmoi cd'
+alias czu='chezmoi update'
+
 alias vi='nvim'
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
