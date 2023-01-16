@@ -1,5 +1,5 @@
 #!/bin/bash
-sudo pacman -S --noconfirm --needed i3 rofi ranger nitrogen picom polybar zsh yay kitty font-manager
+sudo pacman -S --noconfirm --needed i3 rofi ranger nitrogen picom polybar zsh yay kitty font-manager arandr
 
 #change ZDOTDIR to ~/.config/zsh
 if grep -qxF 'ZDOTDIR=/home/alessandro/.config/zsh' /etc/profile; then
