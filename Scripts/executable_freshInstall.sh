@@ -5,7 +5,7 @@ sudo pacman -S --noconfirm --needed i3 rofi ranger nitrogen picom polybar zsh ya
 if grep -qxF 'ZDOTDIR=/home/alessandro/.config/zsh' /etc/profile; then
     echo "ZDOTDIR already set"
 else
-    sudo sh -c "echo ZDOTDIR=/home/$(whoami)/.config/zsh >> /etc/profile"
+    sudo touch /etc/zsh/zshenv || sh -c "echo export ZDOTDIR=/home/$(whoami)/.config/zsh >> /etc/zsh/zshenv"
 fi
 
 #install oh-my-zsh
@@ -19,7 +19,7 @@ fi
 if [ -d ~/.oh-my-zsh/custom/themes/powerlevel10k ]; then
     echo "powerlevel10k already installed"
 else
-    git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k
+    git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/themes/powerlevel10k
 fi
 
 if [ -d ~/.asdf ]; then
