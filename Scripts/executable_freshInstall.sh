@@ -2,10 +2,10 @@
 sudo pacman -S --noconfirm --needed i3 rofi ranger nitrogen picom polybar zsh yay kitty font-manager arandr
 
 #change ZDOTDIR to ~/.config/zsh
-if grep -qxF 'ZDOTDIR=/home/alessandro/.config/zsh' /etc/profile; then
+if grep -qxF 'ZDOTDIR=/home/$(whoami)/.config/zsh' /etc/zsh/zshenv; then
     echo "ZDOTDIR already set"
 else
-    sudo touch /etc/zsh/zshenv || sh -c "echo export ZDOTDIR=/home/$(whoami)/.config/zsh >> /etc/zsh/zshenv"
+    sudo touch /etc/zsh/zshenv && sudo "echo export ZDOTDIR=/home/$(whoami)/.config/zsh >> /etc/zsh/zshenv"
 fi
 
 #install oh-my-zsh
