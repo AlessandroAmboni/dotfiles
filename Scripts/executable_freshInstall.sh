@@ -30,17 +30,16 @@ else
     sh -c "$(curl -fsSL https://raw.github.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 fi
 
+#install asdf 
+if [ -d ~/.asdf ]; then
+git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
+fi
+
 #install PowerLevel10k zsh theme
 if [ -d ~/.oh-my-zsh/custom/themes/powerlevel10k ]; then
     echo "powerlevel10k already installed"
 else
     git clone --depth=1 https://gitee.com/romkatv/powerlevel10k.git "${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}"/themes/powerlevel10k
-fi
-
-if [ -d ~/.asdf ]; then
-    echo "asdf already installed"
-else
-    git clone https://github.com/asdf-vm/asdf.git ~/.asdf
 fi
 
 #!/usr/bin/zsh
