@@ -1,5 +1,20 @@
 #!/bin/bash
-sudo pacman -S --noconfirm --needed i3 rofi ranger nitrogen picom polybar zsh yay kitty font-manager arandr
+
+#setup git user and email
+git config --global user.name "Alessandro Amboni"
+git config --global user.email "alessandroamboni01@gmail.com"
+
+#install packages and reboot if not already installed
+if ! pacman -Qs zsh >/dev/null; then
+    sh ./firstInstall.sh && reboot
+fi
+
+#change shell to zsh
+if [ $SHELL != "/bin/zsh" ]; then
+    chsh -s /bin/zsh
+else
+    echo "shell already set to zsh"
+fi
 
 #change ZDOTDIR to ~/.config/zsh
 if grep -qxF 'ZDOTDIR=/home/$(whoami)/.config/zsh' /etc/zsh/zshenv; then
@@ -35,5 +50,4 @@ asdf global chezmoi latest
 
 chezmoi init AlessandroAmboni
 
-if ! pacman -Qs pokemon-colorscripts-git > /dev/null ; then yay -S pokemon-colorscripts-git; fi
-
+if ! pacman -Qs pokemon-colorscripts-git >/dev/null; then yay -S pokemon-colorscripts-git; fi
