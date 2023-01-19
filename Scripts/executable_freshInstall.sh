@@ -6,12 +6,13 @@ git config --global user.email "alessandroamboni01@gmail.com"
 
 #install packages and reboot if not already installed
 if ! pacman -Qs zsh >/dev/null; then
-    sh ./firstInstall.sh && reboot
+    sh ./firstInstall.sh 
 fi
 
 #change shell to zsh
-if [ $SHELL != "/bin/zsh" ]; then
-    chsh -s /bin/zsh
+if [ $SHELL != "/usr/bin/zsh" ]; then
+    #chsh -s /bin/zsh
+    echo "shell inst zsh"
 else
     echo "shell already set to zsh"
 fi
@@ -20,7 +21,7 @@ fi
 if grep -qxF 'ZDOTDIR=/home/$(whoami)/.config/zsh' /etc/zsh/zshenv; then
     echo "ZDOTDIR already set"
 else
-    sudo touch /etc/zsh/zshenv && sudo "echo export ZDOTDIR=/home/$(whoami)/.config/zsh >> /etc/zsh/zshenv"
+    sudo touch /etc/zsh/zshenv && sudo bash -c "echo export ZDOTDIR=/home/$(whoami)/.config/zsh >> /etc/zsh/zshenv"
 fi
 
 #install oh-my-zsh
@@ -31,7 +32,7 @@ else
 fi
 
 #install asdf 
-if [ -d ~/.asdf ]; then
+if  ! -d ~/.asdf; then
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
 fi
 
