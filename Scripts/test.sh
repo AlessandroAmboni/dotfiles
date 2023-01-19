@@ -1,8 +1,10 @@
 #!/bin/bash
 
 #change ZDOTDIR to ~/.config/zsh
-if grep -qxF 'ZDOTDIR=/home/$(whoami)/.config/zsh' /etc/zsh/zshenv; then
+if grep -qxF "export ZDOTDIR=/home/$(whoami)/.config/zsh" /etc/zsh/zshenv; then
     echo "ZDOTDIR already set"
 else
-    sudo touch /etc/zsh/zshenv && sudo "echo export ZDOTDIR=/home/$(whoami)/.config/zsh >> /etc/zsh/zshenv"
+    sudo touch /etc/zsh/zshenv
+    sudo bash -c "echo export ZDOTDIR=/home/$(whoami)/.config/zsh >> /etc/zsh/zshenv"
+    sudo sh -c "sudo source /etc/zsh/zshenv"
 fi

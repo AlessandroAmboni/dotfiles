@@ -18,10 +18,13 @@ else
 fi
 
 #change ZDOTDIR to ~/.config/zsh
-if grep -qxF 'ZDOTDIR=/home/$(whoami)/.config/zsh' /etc/zsh/zshenv; then
+#change ZDOTDIR to ~/.config/zsh
+if grep -qxF "export ZDOTDIR=/home/$(whoami)/.config/zsh" /etc/zsh/zshenv; then
     echo "ZDOTDIR already set"
 else
-    sudo touch /etc/zsh/zshenv && sudo bash -c "echo export ZDOTDIR=/home/$(whoami)/.config/zsh >> /etc/zsh/zshenv"
+    sudo touch /etc/zsh/zshenv
+    sudo bash -c "echo export ZDOTDIR=/home/$(whoami)/.config/zsh >> /etc/zsh/zshenv"
+    sudo sh -c "sudo source /etc/zsh/zshenv"
 fi
 
 #install oh-my-zsh
@@ -32,7 +35,7 @@ else
 fi
 
 #install asdf 
-if  ! -d ~/.asdf; then
+if  [ ! -d "$HOME/.asdf" ]; then
 git clone https://github.com/asdf-vm/asdf.git ~/.asdf --branch v0.10.2
 fi
 
