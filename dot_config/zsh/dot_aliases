@@ -1,0 +1,26 @@
+#!/bin/bash
+alias ls='exa --icons --group-directories-first'
+alias vi='nvim'
+
+# pacman aliases
+alias update='sudo pacman -Syu'
+alias install='sudo pacman -S'
+alias remove='sudo pacman -R'
+
+# yay aliases
+alias yayu='yay -Syu'
+alias yays='yay -S'
+alias yayr='yay -R'
+
+#git aliases
+alias g='git'
+alias gs='git status'
+alias ga='git add'
+alias gc='git commit'
+alias gcm='git commit -m'
+
+#chezmoi aliases
+alias cz='chezmoi'
+alias cza='chezmoi apply'
+alias {czc,czd}='chezmoi cd'
+alias czu='chezmoi update'
