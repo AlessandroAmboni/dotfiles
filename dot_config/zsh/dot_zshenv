@@ -1,4 +1,4 @@
-EDITOR=nvim
+EDITOR=lvim
 ZSH_COMPDUMP=$ZDOTFILE/cache
 HISTFILE=$ZDOTDIR/.zsh_history
 
