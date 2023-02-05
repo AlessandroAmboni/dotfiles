@@ -199,8 +199,6 @@ bindsym $mod+r mode "resize"
 bindsym $mod+f exec --no-startup-id i3-msg workspace "11:Firefox"; exec --no-startup-id $scripts/openProgramIfNotRunning.sh firefox;  
 bindsym $mod+s exec --no-startup-id i3-msg workspace "12:Spotify"; exec --no-startup-id $scripts/openProgramIfNotRunning.sh spotify;  
         
-
-
 exec --no-startup-id picom
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id alttab -d 1
