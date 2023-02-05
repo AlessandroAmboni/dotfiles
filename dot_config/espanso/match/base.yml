@@ -15,7 +15,8 @@ matches:
   # NOTE: espanso uses YAML to define matches, so pay attention to the indentation!
 
   # But matches can also be dynamic:
-
+  - trigger: ";re"
+    replace: "2022 site:reddit.com"
   # Print the current date
   - trigger: ":date"
     replace: "{{mydate}}"
