@@ -2,7 +2,14 @@
 
 killall -q polybar
 
-while pgrep -u $UID -x polybar >/dev/null; do sleep 1; done
+# verify if polybar is running
+if pgrep -x "polybar" > /dev/null
+then
+    polybar-msg cmd restart
+    polybar mainBar &
+    polybar secondaryBar
+else
+    echo "Polybar is not running"
+fi
 
-polybar mainBar &
-polybar secondaryBar &
+

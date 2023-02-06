@@ -202,5 +202,5 @@ bindsym $mod+s exec --no-startup-id i3-msg workspace "12:Spotify"; exec --no-sta
 exec --no-startup-id picom
 exec --no-startup-id nitrogen --restore
 exec_always --no-startup-id alttab -d 1
-exec_always --no-startup-id ~/.config/i3/scripts/arandrResolution.sh
-exec_always --no-startup-id polybar mainBar & polybar secondaryBar
+exec_always --no-startup-id $scripts/arandrResolution.sh
+exec_always --no-startup-id $scripts/launchPolybars.sh
